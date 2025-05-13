@@ -1,0 +1,101 @@
+/* resources/css/css.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 50px;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #4CAF50;
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+h:outputLabel {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+    color: #333;
+}
+
+h:inputText, h:inputTextarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+h:inputText:focus, h:inputTextarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.btn-submit {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.btn-submit:hover {
+    background-color: #45a049;
+}
+
+.movie-entry {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+.movie-entry p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.movie-entry p:first-child {
+    font-weight: bold;
+}
+
+.movie-entry p:last-child {
+    font-style: italic;
+    color: #777;
+}
