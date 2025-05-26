@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>CineNote – Avaliador de Filmes</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>CineNote – Avaliador de Filmes</h1>
+
+    <form id="formularioFilme" method="post">
+        <input type="text" name="nome" id="nomeFilme" placeholder="Nome do filme" required>
+
+        <label for="notaFilme">Nota (1 a 10):</label>
+        <input type="number" name="nota" id="notaFilme" min="1" max="10" placeholder="Digite a nota" required>
+
+        <textarea name="comentario" id="comentarioFilme" placeholder="Comentário (opcional)"></textarea>
+        
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <!-- Mensagem de sucesso -->
+    <p id="mensagemSucesso">Filme adicionado com sucesso!</p>
+
+
+    <ul id="listaFilmes"></ul>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

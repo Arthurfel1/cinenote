@@ -1,0 +1,207 @@
+/* Container geral para centralizar e alinhar */
+body {
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #181a1f; /* fundo escuro neutro */
+    color: #d6d5d8; /* cinza pastel claro */
+    padding: 30px 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    color: #a3bffa; /* azul pastel */
+    margin-bottom: 30px;
+    font-weight: 800;
+    font-size: 2.2rem;
+    text-shadow: 1px 1px 4px rgba(163, 191, 250, 0.6);
+    width: 100%;
+    letter-spacing: 0.04em;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form */
+form {
+    background-color: #23252b; /* cinza escuro com tom azulado */
+    padding: 30px 90px 30px 35px;
+    border-radius: 14px;
+    box-shadow: 
+        0 -6px 20px rgba(163, 191, 250, 0.25),
+        0 8px 24px rgba(163, 191, 250, 0.15);
+    transition: box-shadow 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+form:hover {
+    box-shadow: 
+        0 -8px 28px rgba(163, 191, 250, 0.45),
+        0 10px 30px rgba(163, 191, 250, 0.3);
+}
+
+/* Inputs e textarea */
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #6b7aab;
+    border-radius: 10px;
+    background-color: #181a1f;
+    color: #d6d5d8;
+    font-size: 1.05rem;
+    font-weight: 500;
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    resize: vertical;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 0 0 0 rgba(163, 191, 250, 0.4);
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+textarea::placeholder {
+    color: #a1a3b8;
+    font-style: italic;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+    border-color: #a3bffa;
+    background-color: #2b2e37;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(163, 191, 250, 0.25);
+}
+
+/* Botão */
+button {
+    background: linear-gradient(45deg, #a3bffa, #7f93d1);
+    color: #181a1f;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(163, 191, 250, 0.85);
+    transition: background 0.35s ease, box-shadow 0.35s ease, transform 0.2s ease;
+    align-self: flex-start;
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #7f93d1, #a3bffa);
+    box-shadow: 0 8px 18px rgba(163, 191, 250, 0.95);
+    transform: translateY(-1px);
+}
+
+/* Estrelas */
+.estrelas {
+    display: flex;
+    gap: 12px;
+    font-size: 26px;
+}
+
+.estrelas .estrela {
+    cursor: pointer;
+    color: #8e95b4;
+    transition: color 0.3s ease;
+}
+
+.estrelas .selecionada {
+    color: #a3bffa;
+}
+
+/* Lista de avaliações */
+ul#listaFilmes {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+ul#listaFilmes li {
+    background-color: #2b2e37;
+    margin-bottom: 18px;
+    padding: 20px 28px;
+    border-left: 8px solid #a3bffa;
+    border-radius: 12px;
+    box-shadow: 
+        0 -4px 15px rgba(163, 191, 250, 0.15),
+        0 6px 20px rgba(163, 191, 250, 0.1);
+    position: relative;
+    font-size: 1.05rem;
+    color: #d6d5d8;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul#listaFilmes li:hover {
+    box-shadow:
+        0 -6px 22px rgba(163, 191, 250, 0.3),
+        0 8px 28px rgba(163, 191, 250, 0.25);
+    cursor: pointer;
+}
+
+/* Botão excluir */
+ul#listaFilmes li button {
+    position: absolute;
+    right: 22px;
+    top: 22px;
+    background-color: #f28b82;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: #181a1f;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 3px 8px rgba(242, 139, 130, 0.7);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul#listaFilmes li button:hover {
+    background-color: #d46e6a;
+    box-shadow: 0 5px 12px rgba(212, 110, 106, 0.9);
+}
+
+/* Mensagem de sucesso aprimorada */
+#mensagemSucesso {
+    background: linear-gradient(135deg, #c9f7d4, #a8eac1);
+    color: #1e3d2f;
+    border: 2px solid #91d9b0;
+    padding: 14px 24px;
+    margin-top: 24px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.4;
+    max-width: 100%;
+    box-sizing: border-box;
+    box-shadow:
+        0 4px 12px rgba(33, 94, 62, 0.2),
+        0 0 0 3px rgba(145, 217, 176, 0.35);
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+
+#mensagemSucesso.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}

@@ -1,0 +1,5 @@
+com\cinenote\controller\FilmeApiServlet.class
+com\cinenote\model\Filme.class
+com\cinenote\model\FilmeDAO.class
+com\cinenote\controller\FilmeAddServlet.class
+com\cinenote\controller\FilmeListServlet.class
