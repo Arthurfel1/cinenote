@@ -1,5 +1,9 @@
-com\cinenote\controller\FilmeApiServlet.class
-com\cinenote\model\Filme.class
+com\cinenote\controller\SessaoListServlet.class
 com\cinenote\model\FilmeDAO.class
 com\cinenote\controller\FilmeAddServlet.class
+com\cinenote\controller\FilmeApiServlet.class
+com\cinenote\model\Filme.class
+com\cinenote\model\SessaoDAO.class
+com\cinenote\model\Sessao.class
+com\cinenote\controller\SessaoAddServlet.class
 com\cinenote\controller\FilmeListServlet.class

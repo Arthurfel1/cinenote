@@ -17,7 +17,7 @@
         }
         table {
             border-collapse: collapse;
-            width: 80%;
+            width: 90%;
             margin-top: 15px;
             background-color: #fff;
             box-shadow: 0 0 5px rgba(0,0,0,0.1);
@@ -26,6 +26,7 @@
             padding: 10px;
             border: 1px solid #ccc;
             text-align: left;
+            vertical-align: top;
         }
         th {
             background-color: #007BFF;
@@ -53,6 +54,9 @@
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
+                    <th>Atores Principais</th>
+                    <th>Gênero</th>
+                    <th>Sinopse</th>
                     <th>Nota</th>
                     <th>Comentário</th>
                 </tr>
@@ -62,6 +66,9 @@
                     <tr>
                         <td>${filme.id}</td>
                         <td>${filme.nome}</td>
+                        <td>${filme.atores}</td>
+                        <td>${filme.genero}</td>
+                        <td>${filme.sinopse}</td>
                         <td>${filme.nota}</td>
                         <td>${filme.comentario}</td>
                     </tr>

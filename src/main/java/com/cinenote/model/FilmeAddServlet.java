@@ -19,14 +19,14 @@ public class FilmeAddServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        System.out.println("🚀 FilmeAddServlet acionado!");
+        request.setCharacterEncoding("UTF-8");
 
-        request.setCharacterEncoding("UTF-8"); // Garante suporte a caracteres especiais
         String nome = request.getParameter("nome");
+        String atores = request.getParameter("atores");
+        String genero = request.getParameter("genero");
+        String sinopse = request.getParameter("sinopse");
         String notaStr = request.getParameter("nota");
         String comentario = request.getParameter("comentario");
-
-        System.out.println("🎬 Dados recebidos: nome=" + nome + ", nota=" + notaStr + ", comentário=" + comentario);
 
         int nota;
         try {
@@ -36,13 +36,11 @@ public class FilmeAddServlet extends HttpServlet {
             return;
         }
 
-        Filme novoFilme = new Filme(nome, nota, comentario);
+        Filme novoFilme = new Filme(nome, atores, genero, sinopse, nota, comentario);
 
         try {
             filmeDAO.salvarFilme(novoFilme);
-            System.out.println("✅ Filme salvo com sucesso!");
 
-            // Retorna o filme como JSON
             response.setContentType("application/json;charset=UTF-8");
             PrintWriter out = response.getWriter();
             String json = new Gson().toJson(novoFilme);

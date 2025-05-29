@@ -15,57 +15,93 @@ public class Filme {
     @Column(nullable = false)
     private String nome;
 
+    @NotBlank(message = "Os atores principais são obrigatórios")
+    @Column(nullable = false)
+    private String atores;
+
+    @NotBlank(message = "O gênero é obrigatório")
+    @Column(nullable = false)
+    private String genero;
+
+    @Size(max = 1000, message = "A sinopse deve ter no máximo 1000 caracteres")
+    @Column(length = 1000)
+    private String sinopse;
+
     @Min(value = 1, message = "A nota deve ser no mínimo 1")
     @Max(value = 10, message = "A nota deve ser no máximo 10")
     @Column(nullable = false)
-    private int nota; // de 1 a 10
+    private int nota;
 
     @Size(max = 1000, message = "O comentário deve ter no máximo 1000 caracteres")
     @Column(length = 1000)
     private String comentario;
 
-    // Construtor padrão (necessário para JPA)
-    public Filme() {
-    }
+    public Filme() {}
 
-    // Construtor com parâmetros para facilitar criação de objetos
-    public Filme(String nome, int nota, String comentario) {
+    public Filme(String nome, String atores, String genero, String sinopse, int nota, String comentario) {
         this.nome = nome;
+        this.atores = atores;
+        this.genero = genero;
+        this.sinopse = sinopse;
         this.nota = nota;
         this.comentario = comentario;
     }
 
     // Getters e setters
-    public Long getId() { 
-        return id; 
+    public Long getId() {
+        return id;
     }
 
-    public void setId(Long id) { 
-        this.id = id; 
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getNome() { 
-        return nome; 
+    public String getNome() {
+        return nome;
     }
 
-    public void setNome(String nome) { 
-        this.nome = nome; 
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public int getNota() { 
-        return nota; 
+    public String getAtores() {
+        return atores;
     }
 
-    public void setNota(int nota) { 
-        this.nota = nota; 
+    public void setAtores(String atores) {
+        this.atores = atores;
     }
 
-    public String getComentario() { 
-        return comentario; 
+    public String getGenero() {
+        return genero;
     }
 
-    public void setComentario(String comentario) { 
-        this.comentario = comentario; 
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getSinopse() {
+        return sinopse;
+    }
+
+    public void setSinopse(String sinopse) {
+        this.sinopse = sinopse;
+    }
+
+    public int getNota() {
+        return nota;
+    }
+
+    public void setNota(int nota) {
+        this.nota = nota;
+    }
+
+    public String getComentario() {
+        return comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
     }
 
     @Override
@@ -73,6 +109,9 @@ public class Filme {
         return "Filme{" +
                 "id=" + id +
                 ", nome='" + nome + '\'' +
+                ", atores='" + atores + '\'' +
+                ", genero='" + genero + '\'' +
+                ", sinopse='" + sinopse + '\'' +
                 ", nota=" + nota +
                 ", comentario='" + comentario + '\'' +
                 '}';

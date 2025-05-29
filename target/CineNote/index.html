@@ -1,30 +1,179 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>CineNote – Avaliador de Filmes</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CineNote – Avaliador de Filmes e Sessões</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/script.js"></script>
+    <style>
+        /* Estilo para a mensagem de sucesso */
+        .mensagem-sucesso {
+            display: none;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            padding: 12px 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeInOut 3s ease-in-out;
+        }
+
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            10%, 90% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>CineNote – Avaliador de Filmes</h1>
+    <header>
+        <h1>CineNote</h1>
+        <nav aria-label="Menu principal">
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#filmes-avaliados">FILMES</a></li>
+                <li><a href="#avaliacoes">Avaliar Filmes</a></li>
+                <li><a href="#sessoes">Gerenciar Sessões</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <form id="formularioFilme" method="post">
-        <input type="text" name="nome" id="nomeFilme" placeholder="Nome do filme" required>
+    <main>
+        <section id="sobre" tabindex="-1">
+            <h2>Sobre o CineNote</h2>
+            <p>
+                CineNote é um avaliador de filmes simples, moderno e intuitivo. Com uma interface amigável e recursos práticos, você pode registrar suas notas, escrever comentários e compartilhar suas impressões sobre os filmes que assiste. Além de manter um histórico pessoal das suas avaliações, suas opiniões ajudam outros usuários a descobrirem novas produções. Seja para organizar suas experiências cinematográficas ou contribuir com a comunidade, o CineNote torna sua jornada como espectador ainda mais significativa.
+            </p>
+        </section>
 
-        <label for="notaFilme">Nota (1 a 10):</label>
-        <input type="number" name="nota" id="notaFilme" min="1" max="10" placeholder="Digite a nota" required>
+        <section id="avaliacoes" tabindex="-1">
+            <h2>Avalie um Filme</h2>
 
-        <textarea name="comentario" id="comentarioFilme" placeholder="Comentário (opcional)"></textarea>
-        
-        <button type="submit">Adicionar</button>
-    </form>
+            <form id="formularioFilme" method="post" aria-label="Formulário para avaliação de filmes" novalidate>
+                <div class="campo-form">
+                    <label for="nomeFilme">Nome do filme</label>
+                    <input type="text" name="nome" id="nomeFilme" placeholder="Digite o nome do filme" required />
+                </div>
 
-    <!-- Mensagem de sucesso -->
-    <p id="mensagemSucesso">Filme adicionado com sucesso!</p>
+                <div class="campo-form">
+                    <label for="atoresFilme">Atores principais</label>
+                    <input type="text" name="atores" id="atoresFilme" placeholder="Digite os atores principais" required />
+                </div>
 
+                <div class="campo-form">
+                    <label for="generoFilme">Gênero</label>
+                    <input type="text" name="genero" id="generoFilme" placeholder="Digite o gênero do filme" required />
+                </div>
 
-    <ul id="listaFilmes"></ul>
+                <div class="campo-form">
+                    <label for="sinopseFilme">Sinopse</label>
+                    <textarea name="sinopse" id="sinopseFilme" placeholder="Digite a sinopse do filme" rows="4" maxlength="1000"></textarea>
+                </div>
 
-    <script src="js/script.js"></script>
+                <div class="campo-form">
+                    <label for="notaFilme">Nota (1 a 10)</label>
+                    <input
+                        type="number"
+                        name="nota"
+                        id="notaFilme"
+                        min="1"
+                        max="10"
+                        placeholder="Digite a nota"
+                        required
+                    />
+                </div>
+
+                <div class="campo-form">
+                    <label for="comentarioFilme">Comentário (opcional)</label>
+                    <textarea
+                        name="comentario"
+                        id="comentarioFilme"
+                        placeholder="Deixe seu comentário"
+                        rows="4"
+                        maxlength="500"
+                    ></textarea>
+                </div>
+
+                <button type="submit" aria-label="Adicionar avaliação de filme">Adicionar</button>
+            </form>
+
+            <!-- Mensagem de sucesso estilizada -->
+            <div id="mensagemSucesso" role="alert" aria-live="polite" class="mensagem-sucesso escondido">
+                <span>🎉 Filme adicionado com sucesso!</span>
+            </div>
+        </section>
+
+        <section id="sessoes" tabindex="-1">
+            <h2>Gerenciar Sessões</h2>
+
+            <form id="formularioSessao" method="post" aria-label="Formulário para adicionar sessão" novalidate>
+                <div class="campo-form">
+                    <label for="filmeSessao">Filme</label>
+                    <select id="filmeSessao" required>
+                        <option value="">Selecione um filme</option>
+                    </select>
+                </div>
+
+                <div class="campo-form">
+                    <label for="salaSessao">Sala</label>
+                    <input type="text" id="salaSessao" placeholder="Digite a sala da sessão" required />
+                </div>
+
+                <div class="campo-form">
+                    <label for="horarioSessao">Horário</label>
+                    <input type="datetime-local" id="horarioSessao" required />
+                </div>
+
+                <div class="campo-form">
+                    <label for="capacidadeSessao">Capacidade</label>
+                    <input type="number" id="capacidadeSessao" min="1" placeholder="Digite a capacidade da sala" required />
+                </div>
+
+                <button type="submit" aria-label="Adicionar sessão">Adicionar Sessão</button>
+            </form>
+
+            <p id="mensagemSucessoSessao" role="alert" aria-live="polite" style="display:none; color: green; margin-top: 20px;">
+                Sessão adicionada com sucesso!
+            </p>
+
+            <ul id="listaSessoes" aria-live="polite" aria-relevant="additions" style="margin-top: 30px;"></ul>
+        </section>
+
+        <section id="filmes-avaliados" tabindex="-1">
+            <h2>Filmes Avaliados</h2>
+            <ul id="listaFilmes" aria-live="polite" aria-relevant="additions" style="margin-top: 30px;">
+                <!-- Filmes avaliados adicionados via JavaScript -->
+            </ul>
+        </section>
+
+        <section id="contato" tabindex="-1">
+            <h2>Contato</h2>
+            <p>Entre em contato com a equipe do CineNote:</p>
+            <ul>
+                <li><strong>Email:</strong> contato@cinenote.com</li>
+                <li><strong>Telefone:</strong> (11) 91234-5678</li>
+                <li><strong>Endereço:</strong> Rua dos Filmes, 123 – Belo Horizonte, </li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 CineNote. Todos os direitos reservados.</p>
+        </footer>
+    </main>
 </body>
 </html>

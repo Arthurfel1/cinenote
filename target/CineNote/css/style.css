@@ -1,207 +1,353 @@
-/* Container geral para centralizar e alinhar */
-body {
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #181a1f; /* fundo escuro neutro */
-    color: #d6d5d8; /* cinza pastel claro */
-    padding: 30px 20px;
-    max-width: 700px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-/* Título */
-h1 {
-    text-align: center;
-    color: #a3bffa; /* azul pastel */
-    margin-bottom: 30px;
-    font-weight: 800;
-    font-size: 2.2rem;
-    text-shadow: 1px 1px 4px rgba(163, 191, 250, 0.6);
-    width: 100%;
-    letter-spacing: 0.04em;
-    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+body {
+  font-family: 'Lora', serif;
+  background-color: #f7f3f0;
+  color: #3d2c1f;
+  max-width: 1200px;
+  margin: 60px auto 80px auto;
+  padding: 0 40px 100px;
+  line-height: 1.7;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0eadf;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b38a6a;
+  border-radius: 10px;
+  border: 3px solid #f0eadf;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6a4e3b;
+}
+
+/* Header */
+header {
+  background-color: #b38a6a;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(179, 138, 106, 0.5);
+  text-align: center;
+  color: white;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 3rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 60px;
+  user-select: none;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  outline-offset: 3px;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  background-color: #3d2c1f;
+  outline: none;
+  color: #f7f3f0;
+}
+
+/* Section */
+section {
+  background-color: white;
+  padding: 40px 50px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 50px;
+  position: relative;
+}
+
+section h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #3d2c1f;
+  margin-bottom: 28px;
+  border-bottom: 3px solid #b38a6a;
+  padding-bottom: 10px;
+  user-select: none;
+}
+
+/* Ícones decorativos nos títulos */
+section[id] h2::before {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#sobre h2::before {
+  background-image: url('../imagens/about.png');
+}
+
+#avaliacoes h2::before {
+  background-image: url('../imagens/star.png');
+}
+
+#contato h2::before {
+  background-image: url('../imagens/contacts.png');
+}
+
+section p {
+  font-size: 1.15rem;
+  color: #6a4e3b;
+  line-height: 1.8;
 }
 
 /* Form */
 form {
-    background-color: #23252b; /* cinza escuro com tom azulado */
-    padding: 30px 90px 30px 35px;
-    border-radius: 14px;
-    box-shadow: 
-        0 -6px 20px rgba(163, 191, 250, 0.25),
-        0 8px 24px rgba(163, 191, 250, 0.15);
-    transition: box-shadow 0.3s ease;
-    width: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-form:hover {
-    box-shadow: 
-        0 -8px 28px rgba(163, 191, 250, 0.45),
-        0 10px 30px rgba(163, 191, 250, 0.3);
+.campo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-/* Inputs e textarea */
+label {
+  font-weight: 600;
+  color: #3d2c1f;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
 input[type="text"],
+input[type="email"],
 input[type="number"],
-textarea {
-    width: 100%;
-    padding: 14px 18px;
-    border: 2px solid #6b7aab;
-    border-radius: 10px;
-    background-color: #181a1f;
-    color: #d6d5d8;
-    font-size: 1.05rem;
-    font-weight: 500;
-    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
-    resize: vertical;
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0 0 0 0 rgba(163, 191, 250, 0.4);
+input[type="date"],
+textarea,
+select {
+  padding: 14px 18px;
+  border: 2px solid #b38a6a;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Lora', serif;
+  color: #3d2c1f;
+  background-color: #f7f3f0;
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  resize: vertical;
+  box-shadow: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%236a4e3b' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 18px;
 }
 
-input[type="text"]::placeholder,
-input[type="number"]::placeholder,
-textarea::placeholder {
-    color: #a1a3b8;
-    font-style: italic;
-}
-
-input[type="text"]:focus,
-input[type="number"]:focus,
+select:focus,
+input:focus,
 textarea:focus {
-    border-color: #a3bffa;
-    background-color: #2b2e37;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(163, 191, 250, 0.25);
+  border-color: #6a4e3b;
+  background-color: white;
+  outline: none;
+  box-shadow: 0 0 8px rgba(106, 78, 59, 0.5);
 }
 
-/* Botão */
+input::placeholder,
+textarea::placeholder {
+  color: #a0896a;
+  font-style: italic;
+}
+
+/* Buttons */
 button {
-    background: linear-gradient(45deg, #a3bffa, #7f93d1);
-    color: #181a1f;
-    border: none;
-    padding: 14px 28px;
-    font-size: 1.15rem;
-    font-weight: 700;
-    border-radius: 14px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(163, 191, 250, 0.85);
-    transition: background 0.35s ease, box-shadow 0.35s ease, transform 0.2s ease;
-    align-self: flex-start;
-    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #b38a6a;
+  color: white;
+  font-weight: 700;
+  padding: 16px 36px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(179, 138, 106, 0.6);
+  font-family: 'Cinzel', serif;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+  align-self: flex-start;
+  user-select: none;
 }
 
-button:hover {
-    background: linear-gradient(135deg, #7f93d1, #a3bffa);
-    box-shadow: 0 8px 18px rgba(163, 191, 250, 0.95);
-    transform: translateY(-1px);
+button:hover,
+button:focus-visible {
+  background-color: #6a4e3b;
+  box-shadow: 0 8px 24px rgba(106, 78, 59, 0.7);
+  outline: none;
+  transform: scale(1.05);
 }
 
-/* Estrelas */
-.estrelas {
-    display: flex;
-    gap: 12px;
-    font-size: 26px;
-}
-
-.estrelas .estrela {
-    cursor: pointer;
-    color: #8e95b4;
-    transition: color 0.3s ease;
-}
-
-.estrelas .selecionada {
-    color: #a3bffa;
-}
-
-/* Lista de avaliações */
-ul#listaFilmes {
-    list-style: none;
-    padding: 0;
-    margin-top: 40px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-ul#listaFilmes li {
-    background-color: #2b2e37;
-    margin-bottom: 18px;
-    padding: 20px 28px;
-    border-left: 8px solid #a3bffa;
-    border-radius: 12px;
-    box-shadow: 
-        0 -4px 15px rgba(163, 191, 250, 0.15),
-        0 6px 20px rgba(163, 191, 250, 0.1);
-    position: relative;
-    font-size: 1.05rem;
-    color: #d6d5d8;
-    display: flex;
-    flex-direction: column;
-    transition: box-shadow 0.3s ease;
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-ul#listaFilmes li:hover {
-    box-shadow:
-        0 -6px 22px rgba(163, 191, 250, 0.3),
-        0 8px 28px rgba(163, 191, 250, 0.25);
-    cursor: pointer;
-}
-
-/* Botão excluir */
-ul#listaFilmes li button {
-    position: absolute;
-    right: 22px;
-    top: 22px;
-    background-color: #f28b82;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 8px;
-    color: #181a1f;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    box-shadow: 0 3px 8px rgba(242, 139, 130, 0.7);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-ul#listaFilmes li button:hover {
-    background-color: #d46e6a;
-    box-shadow: 0 5px 12px rgba(212, 110, 106, 0.9);
-}
-
-/* Mensagem de sucesso aprimorada */
+/* Success Message */
 #mensagemSucesso {
-    background: linear-gradient(135deg, #c9f7d4, #a8eac1);
-    color: #1e3d2f;
-    border: 2px solid #91d9b0;
-    padding: 14px 24px;
-    margin-top: 24px;
-    border-radius: 14px;
-    font-weight: 700;
-    font-size: 1rem;
-    line-height: 1.4;
-    max-width: 100%;
-    box-sizing: border-box;
-    box-shadow:
-        0 4px 12px rgba(33, 94, 62, 0.2),
-        0 0 0 3px rgba(145, 217, 176, 0.35);
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 0.5s ease, transform 0.4s ease;
-    pointer-events: none;
+  margin-top: 32px;
+  padding: 20px 32px;
+  background-color: #6a4e3b;
+  color: white;
+  font-weight: 700;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  box-shadow: 0 6px 18px rgba(106, 78, 59, 0.6);
+  display: none;
+  text-align: center;
+  user-select: none;
 }
 
-#mensagemSucesso.show {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+/* Avaliações */
+#listaFilmes,
+#listaSessoes {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  list-style: none;
+  padding-left: 0;
+}
+
+#listaFilmes li,
+#listaSessoes li {
+  background-color: #f0eadf;
+  padding: 24px 28px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Lora', serif;
+  color: #3d2c1f;
+  font-size: 1.05rem;
+  flex: 1 1 300px;
+  max-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  user-select: none;
+}
+
+#listaFilmes button,
+#listaSessoes button {
+  background-color: #b38a6a;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Lora', serif;
+  margin-top: 12px;
+  width: fit-content;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+  align-self: start;
+  user-select: none;
+}
+
+#listaFilmes button:hover,
+#listaSessoes button:hover,
+#listaFilmes button:focus-visible,
+#listaSessoes button:focus-visible {
+  background-color: #6a4e3b;
+  box-shadow: 0 4px 10px rgba(106, 78, 59, 0.5);
+  outline: none;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 28px;
+  font-size: 1rem;
+  color: white;
+  background-color: #b38a6a;
+  font-family: 'Cinzel', serif;
+  border-radius: 0 0 12px 12px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -4px 16px rgba(179, 138, 106, 0.5);
+  z-index: 1000;
+  user-select: none;
+}
+
+/* Responsive – Mobile Adaptation */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  section {
+    padding: 28px 24px;
+  }
+
+  header {
+    font-size: 2.2rem;
+    padding: 28px;
+  }
+
+  form {
+    max-width: 100%;
+  }
+
+  button {
+    width: 100%;
+    padding: 16px 0;
+    text-align: center;
+  }
+
+  #listaFilmes,
+  #listaSessoes {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #listaFilmes li,
+  #listaSessoes li {
+    max-width: 100%;
+  }
+
+  #listaFilmes button,
+  #listaSessoes button {
+    width: 100%;
+    text-align: center;
+  }
 }

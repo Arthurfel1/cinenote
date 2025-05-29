@@ -1,6 +1,13 @@
 C:\Users\Arthur\Documents\NetBeansProjects\CineNote\src\main\java\com\cinenote\model\TestaConexao.java
 C:\Users\Arthur\Documents\NetBeansProjects\CineNote\src\main\java\com\cinenote\model\FilmeAddServlet.java
+C:\Users\Arthur\Documents\NetBeansProjects\CineNote\src\main\java\com\cinenote\model\Sessao.java
+C:\Users\Arthur\Documents\NetBeansProjects\CineNote\src\main\java\com\cinenote\model\SessaoListServlet.java
+C:\Users\Arthur\Documents\NetBeansProjects\CineNote\src\main\java\Controller\FilmeDeleteServlet.java
+C:\Users\Arthur\Documents\NetBeansProjects\CineNote\src\main\java\com\cinenote\model\FilmeListServlet.java
+C:\Users\Arthur\Documents\NetBeansProjects\CineNote\src\main\java\com\cinenote\model\SessaoDTO.java
 C:\Users\Arthur\Documents\NetBeansProjects\CineNote\src\main\java\Controller\FilmeApiServlet.java
 C:\Users\Arthur\Documents\NetBeansProjects\CineNote\src\main\java\com\cinenote\model\Filme.java
+C:\Users\Arthur\Documents\NetBeansProjects\CineNote\src\main\java\com\cinenote\model\SessaoDAO.java
 C:\Users\Arthur\Documents\NetBeansProjects\CineNote\src\main\java\com\cinenote\model\FilmeDAO.java
-C:\Users\Arthur\Documents\NetBeansProjects\CineNote\src\main\java\com\cinenote\model\FilmeListServlet.java
+C:\Users\Arthur\Documents\NetBeansProjects\CineNote\src\main\java\com\cinenote\model\SessaoAddServlet.java
+C:\Users\Arthur\Documents\NetBeansProjects\CineNote\src\main\java\Controller\SessaoDeleteServlet.java
